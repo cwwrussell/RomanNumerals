@@ -1,0 +1,59 @@
+@import '@styles/mixins';
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.appContent {
+  padding: 64px;
+  gap: 24px;
+  border-radius: 10px;
+  border: 5px solid;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@include mobile {
+  .appContent {
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+  }
+}
+
+
+// dark theme
+@include darkMode {
+  .App {
+    background: darkTheme(background);
+    color: darkTheme(backgroundText);
+
+    .appContent {
+      border-color: lighten(darkTheme(background), 15%);
+      background: darken(darkTheme(background), 5%);
+    }
+  }
+}
+
+// light theme
+@include lightMode {
+  .App {
+    background: lightTheme(background);
+    color: lightTheme(backgroundText);
+
+    .appContent {
+      border-color: darken(lightTheme(background), 15%);
+      background: lighten(lightTheme(background), 15%);
+    }
+  }
+}

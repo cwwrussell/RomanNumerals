@@ -1,0 +1,33 @@
+@use 'sass:map';
+
+$lightPalette: (
+  background: #cdcdcd,
+  backgroundText: #1f1f1f,
+  accent: #227A97FF,
+  accentText: #1f1f1f,
+  action: #227a97,
+  actionDisabled: #aaaaaa,
+  actionText: #ffffff,
+  error: #ff4a1c,
+  errorText: #ffffff,
+);
+
+$darkPalette: (
+  background: #222222,
+  backgroundText: #eaeaea,
+  accent: #227A97FF,
+  accentText: #eaeaea,
+  action: #265669,
+  actionDisabled: #aaaaaa,
+  actionText: #ffffff,
+  error: #e02d00,
+  errorText: #ffffff,
+);
+
+@function darkTheme($key) {
+  @return map.get($darkPalette, $key);
+}
+
+@function lightTheme($key) {
+  @return map.get($lightPalette, $key);
+}

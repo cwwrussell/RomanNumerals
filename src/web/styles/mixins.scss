@@ -1,0 +1,31 @@
+@import './variables';
+
+@mixin mobile {
+  @media (width <= 600px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (width > 600px) and (width <= 1000px) {
+    @content;
+  }
+}
+
+@mixin standard {
+  @media (width > 1000px) {
+    @content;
+  }
+}
+
+@mixin darkMode {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+@mixin lightMode {
+  @media (prefers-color-scheme: light) {
+    @content;
+  }
+}
