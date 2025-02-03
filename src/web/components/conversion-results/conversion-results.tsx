@@ -20,8 +20,8 @@ const ConversionResults: FC = () => {
   } else {
     content = (
       <div className={styles.result}>
-        <div>Roman:</div>
-        <div>{result}</div>
+        <div className={styles.resultPrefix}>Roman:</div>
+        <div className={styles.romanNumeral}>{result}</div>
       </div>
     );
   }

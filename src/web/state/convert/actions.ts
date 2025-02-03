@@ -38,6 +38,7 @@ const convertInputValue = createAsyncThunk<string, void, { state: RootState }>(
       const {
         convert: { inputValue, converting },
       } = getState();
+
       return !converting && inputValue !== "";
     },
   },

@@ -2,12 +2,24 @@
 
 .ConversionResults {
   font-size: 18px;
-  max-width: 240px;
+  width: 270px;
 
   .result {
     display: flex;
     justify-content: space-between;
     gap: 8px;
+
+    .romanNumeral {
+      @include timesNewRoman;
+    }
+
+    @include mobile {
+      justify-content: center;
+
+      .resultPrefix {
+        display: none;
+      }
+    }
   }
 
   &.error {
@@ -18,5 +30,10 @@
     @include lightMode {
       color: lightTheme(error);
     }
+  }
+
+  @include mobile {
+    width: auto;
+    max-width: 250px;
   }
 }

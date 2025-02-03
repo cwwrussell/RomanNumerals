@@ -11,15 +11,18 @@
     font-size: 48px;
     margin-bottom: 8px;
     @include timesNewRoman;
+
+    @include widthLTE(375px) {
+      font-size: 32px;
+    }
   }
 
   .description {
     font-size: 14px;
   }
-}
 
-@include mobile {
-  .AppTitle {
+  @include mobile {
     max-width: 250px;
   }
 }
+

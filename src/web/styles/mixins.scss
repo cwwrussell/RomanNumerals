@@ -1,5 +1,11 @@
 @import './variables';
 
+@mixin widthLTE($width) {
+  @media (width <= $width) {
+    @content;
+  }
+}
+
 @mixin mobile {
   @media (width <= 600px) {
     @content;

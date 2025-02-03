@@ -145,4 +145,9 @@ public class RomanNumeralConverterTests {
     void convert2701() {
         assertEquals("MMDCCI", RomanNumeralConverter.intToRomanNumeral(2701));
     }
+
+    @Test
+    void convert2000() {
+        assertEquals("MM", RomanNumeralConverter.intToRomanNumeral(2000));
+    }
 }

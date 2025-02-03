@@ -25,4 +25,16 @@ public class GlobalExceptionHandler {
         return ResponseEntity.badRequest()
             .body(Map.of("error", "[Invalid Parameter] " + e.getMessage()));
     }
+
+    @ExceptionHandler(UnsupportedOperationException.class)
+    public ResponseEntity<Map<String, Object>> handleUnsupportedOperation(Exception e) {
+        return ResponseEntity.badRequest()
+            .body(Map.of("error", "[Unsupported Operation] " + e.getMessage()));
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Map<String, Object>> handleUnknownError(Exception e) {
+        return ResponseEntity.internalServerError()
+            .body(Map.of("error", "[Unknown Error] " + e.getMessage()));
+    }
 }

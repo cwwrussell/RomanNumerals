@@ -5,8 +5,7 @@ const selectInputValue = (state: RootState) => state.convert.inputValue;
 
 const selectInputValueValid = (state: RootState) =>
   state.convert.inputValue !== "" &&
-  TypeUtils.isIntString(state.convert.inputValue) &&
-  state.convert.result !== null;
+  TypeUtils.isIntString(state.convert.inputValue);
 
 const selectConverting = (state: RootState) => state.convert.converting;
 
