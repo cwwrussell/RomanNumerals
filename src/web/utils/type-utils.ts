@@ -1,5 +1,5 @@
-const isIntString = (value: string): boolean =>
-  value !== "" && !isNaN(parseInt(value, 10));
+const isIntString = (value: unknown): boolean =>
+  typeof value === "string" && !isNaN(parseInt(value, 10));
 
 const TypeUtils = {
   isIntString,

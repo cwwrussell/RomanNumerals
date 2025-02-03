@@ -3,6 +3,7 @@ import ConvertSelectors from "@state/convert/selector";
 import { useSelector } from "react-redux";
 import ServiceUtils from "@utils/service-utils";
 import styles from "./conversion-results.module.scss"; // deconstruct for shorthand
+import cx from "classnames";
 
 // deconstruct for shorthand
 const { failed, pending } = ServiceUtils;
@@ -15,17 +16,25 @@ const ConversionResults: FC = () => {
   if (pending(result)) {
     content = NBSP;
   } else if (failed(result)) {
-    content = "Whoops! Something went wrong, enter a new number to try again.";
+    content = `Error converting number. Enter a new one and try again.`;
   } else {
     content = (
       <div className={styles.result}>
-        <div className={styles.resultPrefix}>Romanized:</div>
+        <div>Roman:</div>
         <div>{result}</div>
       </div>
     );
   }
 
-  return <div className={styles.ConversionResults}>{content}</div>;
+  return (
+    <div
+      className={cx(styles.ConversionResults, {
+        [styles.error]: result === null,
+      })}
+    >
+      {content}
+    </div>
+  );
 };
 
 export default ConversionResults;

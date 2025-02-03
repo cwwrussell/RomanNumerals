@@ -2,7 +2,7 @@ import ServicePayload from "@models/service-payload";
 
 /*
 These checks could certainly be implemented on an as needed basis,
-these util functions just provide a way to make write self documenting code.
+these util functions just provide a way to write self documenting code.
 */
 
 /**

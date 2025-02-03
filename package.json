@@ -20,6 +20,7 @@
     "react-scripts": "5.0.1",
     "sass": "^1.83.4",
     "typescript": "^4.4.2",
+    "uuid": "^11.0.5",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
@@ -48,5 +49,14 @@
   },
   "devDependencies": {
     "react-app-rewired": "^2.2.1"
+  },
+  "proxy": "http://localhost:8080",
+  "jest": {
+    "moduleNameMapper": {
+      "^@state(.*)$": "<rootDir>/src/web/state$1",
+      "^@utils(.*)$": "<rootDir>/src/web/utils$1",
+      "^@services(.*)$": "<rootDir>/src/web/services$1",
+      "^@models(.*)$": "<rootDir>/src/web/models$1"
+    }
   }
 }

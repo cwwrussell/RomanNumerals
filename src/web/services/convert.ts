@@ -1,13 +1,19 @@
-const romanizeInteger = async (inputValue: string): Promise<string> => {
-  await new Promise((res) => {
-    setTimeout(res, 2000);
-  });
+import HttpUtils from "@utils/http-utils";
 
-  return "xxvii";
-};
+const { unwrap } = HttpUtils;
+
+interface RomanNumeralPayload {
+  input: string;
+  output: string;
+}
+
+const integerToRomanNumeral = async (
+  inputValue: string,
+): Promise<RomanNumeralPayload> =>
+  fetch(`/romannumeral?query=${inputValue}`).then(unwrap);
 
 const ConvertService = {
-  romanizeInteger,
+  integerToRomanNumeral,
 };
 
 export default ConvertService;

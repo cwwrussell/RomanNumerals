@@ -16,7 +16,7 @@ const ConverterInput: FC = () => {
     dispatch(ConvertActions.setInputValue(newValue.replace(/\D/g, "")));
   }, []);
 
-  const onClickRomanize = useCallback(() => {
+  const convertValue = useCallback(() => {
     dispatch(ConvertActions.convertInputValue());
   }, []);
 
@@ -27,8 +27,9 @@ const ConverterInput: FC = () => {
         onChange={onChange}
         error={!isValid && inputValue !== ""}
         placeholder="Between 1 and 3999"
+        onPressEnter={convertValue}
       />
-      <FormControls.Button disabled={!isValid} onClick={onClickRomanize}>
+      <FormControls.Button disabled={!isValid} onClick={convertValue}>
         ROMANIZE
       </FormControls.Button>
     </div>

@@ -10,6 +10,7 @@
     margin-left: -2px;
     font-size: 48px;
     margin-bottom: 8px;
+    @include timesNewRoman;
   }
 
   .description {

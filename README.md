@@ -13,12 +13,46 @@ Before you get started, make sure you have these dependencies installed:
 
 ### Step 1: Installation
 
-Start cloning the repository installing the dependencies:
+Clone the repository
 
-```
-git clone <insert repository name here once it's published>
-cd RomanNumerals
+```shell
+git clone git@github.com:cwwrussell/RomanNumerals.git
 ```
 
-### Running the java project
+Install server dependencies:
+
+```shell
+mvn install
+```
+
+Install client dependencies:
+
+```shell
+yarn
+```
+
+or
+
+```shell
+npm install
+```
+
+### Step 2: Running the project
+
+To run the java server:
+
+```shell
+mvn spring-boot:start
+```
+
+To run the react application:
+
+```shell
+yarn start
+```
+
+Once both the react application and the dev server are running,
+navigate to localhost:3000 in your browser.
+
+<img src="assets/romanizer.png" width="450" />
 

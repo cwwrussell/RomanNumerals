@@ -1,6 +1,7 @@
 import { createReducer } from "@reduxjs/toolkit";
 import ConvertActions from "@state/convert/actions";
 import type ServicePayload from "@models/service-payload";
+import ServiceUtils from "@utils/service-utils";
 
 export interface State {
   converting: boolean;
@@ -8,7 +9,7 @@ export interface State {
   result: ServicePayload<string>;
 }
 
-const INITIAL_STATE: State = {
+export const INITIAL_STATE: State = {
   converting: false,
   inputValue: "",
   result: undefined,
@@ -22,6 +23,9 @@ const reducer = createReducer(INITIAL_STATE, (convert) => {
     ConvertActions.private._setInputValue,
     (state, { payload }) => {
       state.inputValue = payload;
+      if (ServiceUtils.failed(state.result)) {
+        state.result = undefined;
+      }
     },
   );
 

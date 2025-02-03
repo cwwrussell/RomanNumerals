@@ -28,17 +28,23 @@ const setInputValue =
     }
   };
 
-const resetResult = createAction("convert/RESET_RESULT");
-
 const convertInputValue = createAsyncThunk<string, void, { state: RootState }>(
   "convert/CONVERT_INPUT_VALUE",
   async (_, { getState }) =>
-    ConvertService.romanizeInteger(getState().convert.inputValue),
+    (await ConvertService.integerToRomanNumeral(getState().convert.inputValue))
+      .output,
+  {
+    condition: (_, { getState }) => {
+      const {
+        convert: { inputValue, converting },
+      } = getState();
+      return !converting && inputValue !== "";
+    },
+  },
 );
 
 const ConvertActions = {
   setInputValue,
-  resetResult,
   convertInputValue,
 
   // separate the 'private' actions from their 'public' partners

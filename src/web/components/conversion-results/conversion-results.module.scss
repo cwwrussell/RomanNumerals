@@ -2,19 +2,21 @@
 
 .ConversionResults {
   font-size: 18px;
+  max-width: 240px;
 
   .result {
     display: flex;
     justify-content: space-between;
     gap: 8px;
+  }
 
-    .resultPrefix {
-      @include darkMode {
-        color: darken(darkTheme(backgroundText), 25%);
-      }
-      @include lightMode {
-        color: lighten(lightTheme(backgroundText), 10%);
-      }
+  &.error {
+    font-size: 14px;
+    @include darkMode {
+      color: darkTheme(error);
+    }
+    @include lightMode {
+      color: lightTheme(error);
     }
   }
 }

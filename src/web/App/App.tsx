@@ -6,7 +6,7 @@ import ConversionResults from "@components/conversion-results/conversion-results
 
 const App: FC = () => {
   return (
-    <div className={styles.App}>
+    <div id="roman-numeral-app" className={styles.App}>
       <div className={styles.appContent}>
         <AppTitle />
         <ConverterInput />
