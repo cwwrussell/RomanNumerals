@@ -187,5 +187,5 @@ unit tests, I added junit-jupiter.
 
 ### Documentation Notes
 
-I attempted to keep most of my code clear and simple enough to be 'self documenting', otherwise I've added code to
+I attempted to keep most of my code clear and simple enough to be 'self documenting', otherwise I've added comments to
 (hopefully) clarify and explain the logic.
