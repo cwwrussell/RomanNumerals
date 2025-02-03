@@ -113,7 +113,7 @@ import User from '@models/interfaces/user';
 
 const fetchUser = async (id: number) => {
   /* fetch user logic */
-}
+};
 
 const updateUser = async (user: User) => {
   /* user update logic */
